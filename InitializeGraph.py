@@ -18,6 +18,8 @@ def initialize_connections(vertices, edges):
     print("Initialize connections:")
     for edge in range(len(edges)):
         print("Vertex", edges[edge][0], "connected with", edges[edge][1], "distance =", edges[edge][2])
-        vertices[edges[edge][0]][2].append([edges[edge][1], edges[edge][2]])
-        vertices[edges[edge][1]][2].append([edges[edge][0], edges[edge][2]])
+        if edges[edge][2]<0:
+            print("negative distance will change to '0'")
+        vertices[edges[edge][0]][2].append([edges[edge][1], max(edges[edge][2], 0)])
+        vertices[edges[edge][1]][2].append([edges[edge][0], max(edges[edge][2], 0)])
     return vertices
