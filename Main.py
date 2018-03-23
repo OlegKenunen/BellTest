@@ -4,9 +4,11 @@ from InitializeGraph import initialize_vertices
 from InitializeGraph import initialize_connections
 
 number_of_vertices = 12
+#vertices have indexes from "0" to "number_of_vertices - 1"
 
 start_vertex = 0
 finish_vertex = 10
+
 # structure of edges: [[from_vertex_index, to_vertex_index, distance], [...], ...]
 edges = [[0, 1, 20.0],
          [0, 2, 10.0],
@@ -29,6 +31,7 @@ edges = [[0, 1, 20.0],
          [8, 9, 20.0],
          [9, 11, 10.0],
          [11, 10, 20.0]]
+
 
 vertices = initialize_vertices(number_of_vertices, start_vertex)
 vertices = initialize_connections(vertices, edges)
